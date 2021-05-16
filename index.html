@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>10lab</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="10lab.css">
+</head>
+<body>
+	<header>
+		<div class="inner-header">
+			<div class="nav">
+				<img class="logo" src="https://i.pinimg.com/originals/3b/57/28/3b57284d7f96e571706d8d17041e2209.jpg" name="logo" alt="logo">
+				<ul class="about">
+					<li>
+						Performing 10 laboratory work.
+					</li>
+					<li>
+						EZ +5 points.
+					</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<content>
+		<div class="content-inner">
+			<div class="part-1">
+				<h1>Part 1</h1>
+				<p>Perform (1 + 𝑠𝑖𝑛 0.1)(1 + 𝑠𝑖𝑛 0.2). . . (1 + 𝑠𝑖𝑛10).</p>
+				<button class="button-part-1" type="submit" onClick="part1()">Push me</button>
+			</div>
+			<div class="part-2">
+				<h1>Part 2</h1>
+				<p>Atbash cipher</p>
+				<p>ENCODER</p>
+				<input class="input-part-2" type="text" name="text" id="input-encoding"> 
+				<button class="button-part-2" type="submit" onClick="atbash_encoding()">Push me</button>
+				<p>DECODER</p>
+				<input class="input-part-2" type="text" name="text" id="input-decoding"> 
+				<button class="button-part-2" type="submit" onClick="atbash_decoding()">Push me</button>
+			</div>
+		</div> 
+	</content>
+	<footer>
+            <div class="container">                
+                        <div class="copyright-text">
+                            <p>Copyright &copy; 2021, All Right Reserved EZY4ME</p>
+                        </div>
+            </div> 
+	</footer>
+</body>
+<script language="javascript">
+        function part1(){
+        	let a = 0;
+        	for( let i = 0.1; i < 10; i = i + 0.1){
+        		a = 1+Math.sin(i);
+        		a = a * a;
+        	}
+        	alert(a);
+        }	
+        function atbash_encoding(text){
+        	var text1 = document.getElementById("input-encoding").value;
+       		let text2 = "";
+       		let k = 0;
+    		alert(text1);
+    		let arr_text = new Array();
+    		let arr_alphabet1 = new Array();
+    		let arr_encoding = new Array();
+    		let arr_tebahpla1 = new Array();
+    		let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			let tebahpla = "ZYXWVUTSRQPONMLKJIHGFEDCBA";
+			let alphabet1 = "abcdefghijklmnopqrstuvwxyz";
+			let tebahpla1 = "zyxwvutsrqponmlkjihgfedcba";
+    		for(let i = 0; i < text1.length; i++)
+    		{
+    			arr_text[i] = text1.charAt(i);
+    		}
+    		for(let i = 0; i < alphabet1.length;i++)
+    		{
+    			arr_alphabet1[i] = alphabet1.charAt(i);
+    		}
+    		for(let i = 0; i < tebahpla1.length;i++)
+    		{
+    			arr_tebahpla1[i] = tebahpla1.charAt(i);
+    		}
+    		for(let i = 0; i < text1.length; i++)
+    		{
+    			for(let j = 0; j < arr_alphabet1.length;j++)
+    			{
+    				if(arr_text[i] == arr_alphabet1[j])
+    				{ 
+    					arr_encoding[k] = j;
+    					k++;
+
+    				}
+    				else 
+    				{
+    					continue;
+    				}
+    			}
+    		}
+    		for(let i = 0; i < arr_encoding.length;i++)
+    		{
+    			for(let j = 0; j < arr_tebahpla1.length;j++)
+    			{
+    				if(arr_encoding[i] == j)
+    				{
+    					text2 = text2 + arr_tebahpla1[j];
+    				}
+    				else
+    				{
+    					continue;
+    				}
+    			}
+    		}
+    		alert(text2);
+		}
+		function atbash_decoding(text){
+        	var text1 = document.getElementById("input-decoding").value;
+       		let text2 = "";
+       		let k = 0;
+    		alert(text1);
+    		let arr_text = new Array();
+    		let arr_alphabet1 = new Array();
+    		let arr_encoding = new Array();
+    		let arr_tebahpla1 = new Array();
+    		let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			let tebahpla = "ZYXWVUTSRQPONMLKJIHGFEDCBA";
+			let alphabet1 = "abcdefghijklmnopqrstuvwxyz";
+			let tebahpla1 = "zyxwvutsrqponmlkjihgfedcba";
+    		for(let i = 0; i < text1.length; i++)
+    		{
+    			arr_text[i] = text1.charAt(i);
+    		}
+    		for(let i = 0; i < alphabet1.length;i++)
+    		{
+    			arr_alphabet1[i] = alphabet1.charAt(i);
+    		}
+    		for(let i = 0; i < tebahpla1.length;i++)
+    		{
+    			arr_tebahpla1[i] = tebahpla1.charAt(i);
+    		}
+    		for(let i = 0; i < text1.length; i++)
+    		{
+    			for(let j = 0; j < arr_alphabet1.length;j++)
+    			{
+    				if(arr_text[i] == arr_alphabet1[j])
+    				{ 
+    					arr_encoding[k] = j;
+    					k++;
+
+    				}
+    				else 
+    				{
+    					continue;
+    				}
+    			}
+    		}
+    		for(let i = 0; i < arr_encoding.length;i++)
+    		{
+    			for(let j = 0; j < arr_tebahpla1.length;j++)
+    			{
+    				if(arr_encoding[i] == j)
+    				{
+    					text2 = text2 + arr_tebahpla1[j];
+    				}
+    				else
+    				{
+    					continue;
+    				}
+    			}
+    		}
+    		alert(text2);
+		}
+</script>
+</html>
